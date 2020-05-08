@@ -18,10 +18,8 @@ def reconstruct_trip(tickets, length):
             route[0] = ticket.destination
         # add each ticket to the cache
         cache[ticket.source] = ticket.destination
-        print(cache)
-
     for i in range(1, length):
-        print(f"i: {i}, route[i-1]:{cache[route[i-1]]}")
+        # print(f"i: {i}, route[i-1]:{cache[route[i-1]]}")
         route[i] = cache[route[i-1]]
     print(route)
     return route
