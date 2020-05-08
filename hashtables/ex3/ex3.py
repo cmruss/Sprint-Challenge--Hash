@@ -3,6 +3,13 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
+    cache = {}
+    result = []
+    for i in arrays:
+        if cache.get(i):
+            result.append(cache[i])
+        cache[i] = i
+    
 
     return result
 
