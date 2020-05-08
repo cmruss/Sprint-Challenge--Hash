@@ -5,15 +5,21 @@ def intersection(arrays):
     """
     cache = {}
     result = []
+    # loop through list elements in arrays
     for i in arrays:
+        # and loop through each list
         for j in i:
+            # if the number is already in the cache
             if j in cache:
-                print(f"gotten")
+                # increment its value
                 cache[j] += 1
-            else:
+            else: # or if not there add with value of 1
                 cache[j] = 1
+    # loop through the cache
     for k in cache:
+        # if the value counter equals the number of lists in arrays
         if cache[k] == len(arrays):
+            # add the key to the result array
             result.append(k)
     return result
 

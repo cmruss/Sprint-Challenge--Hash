@@ -21,5 +21,4 @@ def reconstruct_trip(tickets, length):
     for i in range(1, length):
         # print(f"i: {i}, route[i-1]:{cache[route[i-1]]}")
         route[i] = cache[route[i-1]]
-    print(route)
     return route
