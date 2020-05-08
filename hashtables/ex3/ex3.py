@@ -6,11 +6,15 @@ def intersection(arrays):
     cache = {}
     result = []
     for i in arrays:
-        if cache.get(i):
-            result.append(cache[i])
-        cache[i] = i
-    
-
+        for j in i:
+            if j in cache:
+                print(f"gotten")
+                cache[j] += 1
+            else:
+                cache[j] = 1
+    for k in cache:
+        if cache[k] == len(arrays):
+            result.append(k)
     return result
 
 

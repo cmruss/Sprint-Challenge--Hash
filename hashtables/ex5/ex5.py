@@ -17,6 +17,7 @@ def finder(files, queries):
         if base in cache:
             # add the path to the results 
             result.append(path)
+            # add the path to the cache
             cache[base].append(path)
     return result
 
