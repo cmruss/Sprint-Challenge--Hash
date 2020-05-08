@@ -5,15 +5,18 @@ def finder(files, queries):
     """
     cache = {}
     result = []
+    for word in queries:
+        cache[word] = []
+
     for path in files:
         base = path.split("/")[-1]
         # print(base)
-        if base not in cache:
-            cache[base] = path
+        if base in cache:
+            result.append(path)
         # print(cache)
-    for word in queries:
-        if cache.get(word):
-            result.append(cache[word])
+        # elif base in cache:
+        #     cache[base].append(path)
+
     print(result)
     return result
 
